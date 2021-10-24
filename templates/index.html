@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP.Knew.IT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/app.css')}}">
+</head>
+
+
+<body>
+
+    <nav>
+        <h2>IP.Knew.IT</h2>
+    </nav>
+
+    <div class="Search_bar_container">
+        <form action="" method="get">
+
+            <div class="backSearchbarrow" >   <!-- style="{{mycss}}" -->
+                <div class="div1">
+                    <label for="ipaddress">IP Address:</label>
+                </div>
+                <div class="div2">
+                    <input type="text" name="ipaddress" id="ipaddress">
+                </div>
+                <div class="div3">
+                    <button type="submit" id="submitIPv4">Check</button>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+
+    <div class="IP_information_Table container">
+        <table class="table">
+            <thead>
+                
+                    
+                    <td class="text-center h3 font-weight-bold">Information</td>
+                    <td class="text-center h3 font-weight-bold">Value</td>
+            </thead>
+            <tbody>
+                {% if msg or type_IP_version or class_IP %}
+                <tr>
+                    <td class="h4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; IP Validity:</td>   
+                    <td class="text-center h4">{{msg}}</td>
+                </tr>
+                <tr>
+                    <td class="h4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; IP Type:</td>   
+                    <td class="text-center h4">{{type_IP_version}}</td>
+                </tr>
+                <tr>
+                    <td class="h4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; IP Class</td>
+                    <td class="text-center h4">{{class_IP}}</td>
+                   {% endif %}
+                </tr>
+            </tbody>
+    </div>
+    </table>
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
